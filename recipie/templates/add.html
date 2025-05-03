@@ -1,0 +1,126 @@
+
+<!DOCTYPE html>
+<!-- Coding By CodingNepal - codingnepalweb.com -->
+<html lang="en" dir="ltr">
+  
+    
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Registration or Sign Up form in HTML CSS | CodingLab</title>
+      <style>
+        body {
+          margin: 0;
+          padding: 0;
+          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+          background: url('https://images.unsplash.com/photo-1506354666786-959d6d497f1a') no-repeat center center fixed;
+          background-size: cover;
+        }
+    
+        .wrapper {
+          max-width: 450px;
+          margin: 80px auto;
+          background: rgba(255, 255, 255, 0.95);
+          padding: 30px 40px;
+          border-radius: 15px;
+          box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+    
+        h2 {
+          text-align: center;
+          color: #333;
+          margin-bottom: 25px;
+        }
+    
+        .signupform .input-box {
+          margin-bottom: 18px;
+        }
+    
+        .signupform .input-box input[type="text"],
+        .signupform .input-box input[type="file"] {
+          width: 100%;
+          padding: 12px 15px;
+          border: 1px solid #ccc;
+          border-radius: 8px;
+          font-size: 14px;
+          transition: all 0.3s ease;
+        }
+    
+        .signupform .input-box input[type="text"]:focus,
+        .signupform .input-box input[type="file"]:focus {
+          border-color: #4CAF50;
+          outline: none;
+          box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+        }
+        .signupform .input-box input[type="text"],
+        .signupform .input-box input[type="file"] {
+        width: 95%; /* Slightly narrower to allow room for left shift */
+        padding: 12px 15px;
+        margin-left: -1%; /* This shifts inputs a bit to the left */
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        font-size: 14px;
+        transition: all 0.3s ease;
+
+}
+    
+        .signupform .input-box input[type="submit"] {
+          width: 100%;
+          padding: 12px;
+          background-color: #4CAF50;
+          border: none;
+          color: white;
+          font-size: 16px;
+          border-radius: 8px;
+          cursor: pointer;
+          transition: background 0.3s ease;
+        }
+    
+        .signupform .input-box input[type="submit"]:hover {
+          background-color: #471313e3;
+        }
+    
+        h3 {
+          text-align: center;
+          color: #d32f2f;
+          font-weight: normal;
+        }
+      </style>
+    
+    
+   </head>
+<body>
+  <div class="wrapper">
+    <h2>ADD RECIPIES</h2>
+
+    <form method="POST" enctype="multipart/form-data" class="signupform" name="signupform">
+      {% csrf_token %}
+      <h3 style="color:black;">{{msg}}</h3>
+
+      <div class="input-box">
+        <input type="text" placeholder="TITLE"  name="t" required>
+      </div>
+
+      <div class="input-box">
+        <input type="file" placeholder="IMAGE" name="i" required>
+      </div>
+      <div class="input-box">
+        <input type="text" placeholder="INGREDIANTS" name="ing" required>
+      </div>
+      <div class="input-box">
+        <input type="text" placeholder="DESCRIPTION"  name="d" required>
+      </div>
+      <div class="input-box">
+        <input type="text" placeholder="INSTRUCTIONS"  name="ins" required>
+      </div>
+      
+      
+      
+      <div class="input-box button">
+        <input type="Submit" value="Add recipie" name="submit">
+      </div>
+      
+    </form>
+  </div>
+</body>
+</html>
